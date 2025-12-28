@@ -28,8 +28,35 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 socketio.init_app(app)
 
-# Ensure database tables are created (important for Render/Gunicorn)
+# Ensure database tables and columns exist (important for Render/Gunicorn)
 with app.app_context():
+    try:
+        from sqlalchemy import text
+        with db.engine.connect() as conn:
+            # Check for language column and others added recently
+            res = conn.execute(text("PRAGMA table_info(user)"))
+            columns = [row[1] for row in res.fetchall()]
+            
+            missing_cols = [
+                ('language', "VARCHAR(10) DEFAULT 'fr'"),
+                ('bio', "TEXT"),
+                ('profile_picture_url', "VARCHAR(255)"),
+                ('email', "VARCHAR(120)"),
+                ('email_notifications', "BOOLEAN DEFAULT 1"),
+                ('weekly_reports', "BOOLEAN DEFAULT 1"),
+                ('default_currency', "VARCHAR(10) DEFAULT 'USD'"),
+                ('role', "VARCHAR(20) DEFAULT 'Investisseur'"),
+                ('created_date', "DATETIME")
+            ]
+            
+            for col_name, col_type in missing_cols:
+                if col_name not in columns:
+                    print(f"Migrating: Adding column {col_name}")
+                    conn.execute(text(f"ALTER TABLE user ADD COLUMN {col_name} {col_type}"))
+            
+            conn.commit()
+    except Exception as e:
+        print(f"Auto-migration error: {e}")
     db.create_all()
 
 @login_manager.user_loader
@@ -50,6 +77,7 @@ def save_portfolio(p):
         db.session.rollback()
         print(f"Error saving portfolio: {e}")
 
+# Translations Dictionary
 # Translations Dictionary
 TRANSLATIONS = {
     'fr': {
@@ -184,10 +212,13 @@ TRANSLATIONS = {
 @app.context_processor
 def inject_portfolio():
     def translate(text):
-        lang = 'fr'
-        if current_user.is_authenticated:
-            lang = current_user.language or 'fr'
-        return TRANSLATIONS.get(lang, TRANSLATIONS['fr']).get(text, text)
+        try:
+            lang = 'fr'
+            if current_user and current_user.is_authenticated:
+                lang = getattr(current_user, 'language', 'fr') or 'fr'
+            return TRANSLATIONS.get(lang, TRANSLATIONS['fr']).get(text, text)
+        except Exception:
+            return text
         
     if current_user.is_authenticated:
         return dict(portfolio=get_portfolio(), current_user=current_user, _=translate)
@@ -196,9 +227,13 @@ def inject_portfolio():
 @app.route('/set_language/<lang>')
 def set_language(lang):
     if lang in ['fr', 'en']:
-        if current_user.is_authenticated:
-            current_user.language = lang
-            db.session.commit()
+        try:
+            if current_user.is_authenticated:
+                current_user.language = lang
+                db.session.commit()
+        except Exception as e:
+            db.session.rollback()
+            print(f"Error setting language: {e}")
     return redirect(request.referrer or url_for('index'))
 
 # --- Auth Routes ---

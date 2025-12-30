@@ -1,13 +1,13 @@
 # 📊 Portfolio DSBA
 
-**Modular Python Project – Incremental Development (v0 / v1 / v2 / v3)**
+**Modular Python Project – Incremental Development (v0 / v1 / v2)**
 
 ## 1. Introduction
 
 **Portfolio DSBA** is a cryptocurrency portfolio management and analysis application.
-The project was developed as part of a **Python programming and software engineering course**, with the objective of designing and implementing a **non-trivial application**, with a strong focus on problem analysis, software design, modularity, and code quality.
+The project was developed as part of a **Python programming and software engineering course**, with the objective of designing and implementing a **non-trivial application**, emphasizing problem analysis, software design, modularity, and code quality.
 
-The project follows an **incremental development approach**, structured into several successive versions (**v0, v1, v2, v3**). Each version is executable and illustrates the progressive evolution of the application.
+The project follows an **incremental development approach**, structured into successive versions (**v0, v1, v2**). Each version is executable and demonstrates the progressive evolution of the application, with **v2 representing the final and most complete version**.
 
 ---
 
@@ -15,37 +15,37 @@ The project follows an **incremental development approach**, structured into sev
 
 Managing a cryptocurrency portfolio involves:
 
-* tracking held assets,
-* accessing market data,
-* analyzing portfolio value and allocation.
+* tracking owned assets,
+* accessing real-time market data,
+* analyzing portfolio value and asset allocation.
 
 The main objectives of the project are:
 
 * Model the problem of cryptocurrency portfolio management
 * Design a **clear, modular, and scalable** software architecture
-* Implement a **Python** application following best practices
-* Apply an **incremental development process** (V0 → V1 → V2 → V3)
-* Deliver a functional and well-documented application
+* Implement a **Python-based** application following best practices
+* Apply an **incremental development process** (v0 → v1 → v2)
+* Deliver a functional, robust, and well-documented application
 
 ---
 
 ## 3. Technical Constraints
 
-The project complies with the constraints defined in the assignment:
+The project complies with the technical constraints defined in the assignment:
 
 * Application developed primarily in **Python**
 * Code organized across **multiple files and modules**
-* Adherence to best practices:
+* Compliance with best practices:
 
-  * PEP 8 conventions
+  * PEP 8 coding conventions
   * docstrings for public classes and functions
-  * explanatory comments
-* Use of appropriate tools depending on the version:
+  * explanatory comments when necessary
+* Progressive use of appropriate tools:
 
   * command-line interface (CLI)
   * data persistence
-  * external API calls
-  * web interface in the final version
+  * external API integration
+  * web-based visualization in the final version
 
 ---
 
@@ -56,7 +56,6 @@ portfolio-dsba/
 ├── v0/
 ├── v1/
 ├── v2/
-├── v3/
 ├── src/
 ├── README.md
 ├── REPORT.md
@@ -65,9 +64,9 @@ portfolio-dsba/
 └── requirements.txt
 ```
 
-* `v0/`, `v1/`, `v2/`, `v3/`: successive and executable versions of the project
+* `v0/`, `v1/`, `v2/`: successive and executable versions of the project
 * `src/`: main source code
-* `portfolio.json`: portfolio data
+* `portfolio.json`: portfolio data storage
 * `REPORT.md`: detailed project report
 
 ---
@@ -76,31 +75,28 @@ portfolio-dsba/
 
 ### 🔹 Version v0 – MVP
 
-* Project skeleton setup
+* Project skeleton and initial architecture
 * Modeling of core entities (portfolio, assets)
-* Minimal management functionalities
+* Basic portfolio management features
 * First executable version
 
 ### 🔹 Version v1 – Functional Extensions
 
-* Addition of new features
-* Improved modular structure
-* More advanced data management
+* Addition of new portfolio management features
+* Improved modular organization
+* Enhanced data handling
 * Extended command-line interface
 
-### 🔹 Version v2 – Robustness and Enrichment
+### 🔹 Version v2 – Final Version: Robustness and Enrichment
 
-* Improved business logic
-* Error handling
-* Introduction of analytical features
-* Preparation for external service integration
-
-### 🔹 Version v3 – Final Version
-
-* Integration of market data via external APIs
-* Addition of a web interface for visualization
-* Improved user experience
-* Most complete and robust version of the project
+* Improved business logic and application robustness
+* Comprehensive error handling and input validation
+* Portfolio analysis features (total value, allocation, performance indicators)
+* Integration of cryptocurrency market data via external APIs
+* Data persistence and synchronization with market information
+* Web interface for portfolio visualization
+* Enhanced user experience
+* Most complete and stable version of the project
 
 Each version **builds upon the previous one**, without requiring a complete rewrite of the codebase.
 
@@ -110,12 +106,12 @@ Each version **builds upon the previous one**, without requiring a complete rewr
 
 * **Python**: business logic and portfolio management
 * **JavaScript / React**: web interface (final version)
-* **External APIs**: market data retrieval
+* **External APIs**: cryptocurrency market data retrieval
 * **Tools and libraries**:
 
   * argparse (CLI)
   * JSON (data persistence)
-  * ESLint, frontend build tools
+  * ESLint and frontend build tools
 
 ---
 
@@ -124,15 +120,15 @@ Each version **builds upon the previous one**, without requiring a complete rewr
 ### Prerequisites
 
 * **Python 3.9 or higher**
-* **Node.js** (for the web interface in v3)
+* **Node.js** (required for the web interface in v2)
 
-### Python dependencies
+### Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Frontend dependencies (v3)
+### Frontend Dependencies (v2)
 
 ```bash
 npm install
@@ -142,12 +138,12 @@ npm install
 
 ## 8. Execution
 
-Each version can be run independently.
+Each version can be executed independently.
 
 ### Example (final version):
 
 ```bash
-cd v3
+cd v2
 python main.py
 ```
 
@@ -167,46 +163,45 @@ Portfolio data is stored in the following file:
 portfolio.json
 ```
 
-This file is used for data persistence and asset analysis.
+This file is used for data persistence and portfolio analysis.
 
 ---
 
 ## 10. Report
 
-A detailed report is provided in:
+A detailed report is available in:
 
 ```text
 REPORT.md
 ```
 
-It covers:
+It includes:
 
-* context and problem definition
+* project context and problem definition
 * informal specifications
 * development plan
 * software architecture
 * evaluation of project versions
-* limitations and improvement perspectives
+* limitations and future improvement perspectives
 
-In accordance with the guidelines, the report does not include full code listings and refers to docstrings where necessary.
+In accordance with the assignment guidelines, the report does not include full code listings and refers to docstrings where appropriate.
 
 ---
 
 ## 11. Authors
 
-Project developed by a **group of 3 students**,
-as part of a **Python programming / software engineering** course.
+Project developed by a **group of three students**,
+as part of a **Python programming and software engineering** course.
 
 ---
 
 ## 12. Conclusion
 
-This project illustrates a complete software development workflow:
+This project demonstrates a complete software development lifecycle:
 
 * problem analysis,
-* modular design,
+* modular software design,
 * incremental implementation,
-* documentation and critical reflection.
+* documentation and critical evaluation.
 
-It highlights the importance of structure, readability, and scalability in a medium-sized Python project.
-
+It highlights the importance of code structure, readability, and scalability in a medium-sized Python application.

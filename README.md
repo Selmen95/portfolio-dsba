@@ -1,51 +1,55 @@
-# 📊 CryptoPortfolio  
-**Projet Python modulaire – Développement incrémental (v0 / v1 / v2 / v3)**
+# 📊 CryptoPortfolio
+
+**Modular Python Project – Incremental Development (v0 / v1 / v2 / v3)**
 
 ## 1. Introduction
 
-**CryptoPortfolio** est une application de gestion et d’analyse de portefeuille de cryptomonnaies.  
-Le projet a été réalisé dans le cadre d’un enseignement de **programmation Python et génie logiciel**, avec pour objectif de concevoir et implémenter une application **non triviale**, en mettant l’accent sur l’analyse du problème, la conception logicielle, la modularité et la qualité du code.
+**CryptoPortfolio** is a cryptocurrency portfolio management and analysis application.
+The project was developed as part of a **Python programming and software engineering course**, with the objective of designing and implementing a **non-trivial application**, with a strong focus on problem analysis, software design, modularity, and code quality.
 
-Le développement du projet suit une **approche incrémentale**, structurée en plusieurs versions successives (**v0, v1, v2, v3**), toutes exécutables et illustrant l’évolution progressive de l’application.
-
----
-
-## 2. Problématique et objectifs
-
-La gestion d’un portefeuille de cryptomonnaies implique :
-- le suivi des actifs détenus,
-- l’accès à des données de marché,
-- l’analyse de la valeur et de la répartition du portefeuille.
-
-Les objectifs du projet sont les suivants :
-
-- Modéliser le problème de la gestion d’un portefeuille crypto
-- Concevoir une architecture logicielle **claire, modulaire et évolutive**
-- Implémenter une application en **Python**, respectant les bonnes pratiques
-- Mettre en œuvre un **développement incrémental** (V0 → V1 → V2 → V3)
-- Fournir une application fonctionnelle et documentée
+The project follows an **incremental development approach**, structured into several successive versions (**v0, v1, v2, v3**). Each version is executable and illustrates the progressive evolution of the application.
 
 ---
 
-## 3. Contraintes techniques respectées
+## 2. Problem Statement and Objectives
 
-Le projet respecte les contraintes imposées par la consigne :
+Managing a cryptocurrency portfolio involves:
 
-- Application développée principalement en **Python**
-- Code réparti sur **plusieurs fichiers et modules**
-- Respect des bonnes pratiques :
-  - PEP 8
-  - docstrings pour les classes et fonctions publiques
-  - commentaires explicatifs
-- Utilisation d’outils adaptés selon les versions :
-  - interface en ligne de commande (CLI)
-  - persistance des données
-  - appels à des API externes
-  - interface web en version finale
+* tracking held assets,
+* accessing market data,
+* analyzing portfolio value and allocation.
+
+The main objectives of the project are:
+
+* Model the problem of cryptocurrency portfolio management
+* Design a **clear, modular, and scalable** software architecture
+* Implement a **Python** application following best practices
+* Apply an **incremental development process** (V0 → V1 → V2 → V3)
+* Deliver a functional and well-documented application
 
 ---
 
-## 4. Organisation du projet
+## 3. Technical Constraints
+
+The project complies with the constraints defined in the assignment:
+
+* Application developed primarily in **Python**
+* Code organized across **multiple files and modules**
+* Adherence to best practices:
+
+  * PEP 8 conventions
+  * docstrings for public classes and functions
+  * explanatory comments
+* Use of appropriate tools depending on the version:
+
+  * command-line interface (CLI)
+  * data persistence
+  * external API calls
+  * web interface in the final version
+
+---
+
+## 4. Project Structure
 
 ```text
 portfolio-dsba/
@@ -59,76 +63,76 @@ portfolio-dsba/
 ├── portfolio.json
 ├── package.json
 └── requirements.txt
-````
+```
 
-* `v0/`, `v1/`, `v2/`, `v3/` : versions successives et exécutables du projet
-* `src/` : code source principal
-* `portfolio.json` : données du portefeuille
-* `REPORT.md` : rapport détaillé du projet
+* `v0/`, `v1/`, `v2/`, `v3/`: successive and executable versions of the project
+* `src/`: main source code
+* `portfolio.json`: portfolio data
+* `REPORT.md`: detailed project report
 
 ---
 
-## 5. Développement incrémental
+## 5. Incremental Development
 
 ### 🔹 Version v0 – MVP
 
-* Mise en place du squelette du projet
-* Modélisation des entités principales (portefeuille, actifs)
-* Fonctionnalités minimales de gestion
-* Première version exécutable
+* Project skeleton setup
+* Modeling of core entities (portfolio, assets)
+* Minimal management functionalities
+* First executable version
 
-### 🔹 Version v1 – Extensions fonctionnelles
+### 🔹 Version v1 – Functional Extensions
 
-* Ajout de nouvelles fonctionnalités
-* Amélioration de la structure modulaire
-* Gestion plus avancée des données
-* Extension de l’interface utilisateur en ligne de commande
+* Addition of new features
+* Improved modular structure
+* More advanced data management
+* Extended command-line interface
 
-### 🔹 Version v2 – Robustesse et enrichissement
+### 🔹 Version v2 – Robustness and Enrichment
 
-* Amélioration de la logique métier
-* Gestion des erreurs
-* Ajout de fonctionnalités d’analyse
-* Préparation à l’intégration de services externes
+* Improved business logic
+* Error handling
+* Introduction of analytical features
+* Preparation for external service integration
 
-### 🔹 Version v3 – Version finale
+### 🔹 Version v3 – Final Version
 
-* Intégration de données de marché via des API externes
-* Ajout d’une interface web pour la visualisation
-* Amélioration de l’expérience utilisateur
-* Version la plus complète et la plus robuste du projet
+* Integration of market data via external APIs
+* Addition of a web interface for visualization
+* Improved user experience
+* Most complete and robust version of the project
 
-Chaque version **s’appuie sur la précédente**, sans réécriture complète du code.
+Each version **builds upon the previous one**, without requiring a complete rewrite of the codebase.
 
 ---
 
-## 6. Technologies utilisées
+## 6. Technologies Used
 
-* **Python** : logique métier, gestion du portefeuille
-* **JavaScript / React** : interface web (version finale)
-* **API externes** : récupération de données de marché
-* **Outils et bibliothèques** :
+* **Python**: business logic and portfolio management
+* **JavaScript / React**: web interface (final version)
+* **External APIs**: market data retrieval
+* **Tools and libraries**:
 
   * argparse (CLI)
-  * JSON (persistance des données)
-  * ESLint, outils de build frontend
+  * JSON (data persistence)
+  * ESLint, frontend build tools
 
 ---
 
 ## 7. Installation
 
-### Prérequis
+### Prerequisites
 
-* **Python 3.9 ou supérieur**
-* **Node.js** (pour l’interface web en v3)
+* **Python 3.9 or higher**
+* **Node.js** (for the web interface in v3)
 
-### Installation des dépendances Python
+### Python dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Installation des dépendances frontend (v3)
+### Frontend dependencies (v3)
 
 ```bash
 npm install
@@ -136,18 +140,18 @@ npm install
 
 ---
 
-## 8. Exécution
+## 8. Execution
 
-Chaque version peut être lancée indépendamment.
+Each version can be run independently.
 
-### Exemple (version finale) :
+### Example (final version):
 
 ```bash
 cd v3
 python main.py
 ```
 
-Pour lancer l’interface web :
+To launch the web interface:
 
 ```bash
 npm run dev
@@ -155,53 +159,54 @@ npm run dev
 
 ---
 
-## 9. Données
+## 9. Data
 
-Les données du portefeuille sont stockées dans le fichier :
+Portfolio data is stored in the following file:
 
 ```text
 portfolio.json
 ```
 
-Ce fichier est utilisé pour la persistance et l’analyse des actifs.
+This file is used for data persistence and asset analysis.
 
 ---
 
-## 10. Rapport
+## 10. Report
 
-Un rapport détaillé est fourni dans le fichier :
+A detailed report is provided in:
 
 ```text
 REPORT.md
 ```
 
-Il présente :
+It covers:
 
-* le contexte et la problématique
-* les spécifications informelles
-* le plan de développement
-* l’architecture logicielle
-* l’évaluation des différentes versions
-* les limites et pistes d’amélioration
+* context and problem definition
+* informal specifications
+* development plan
+* software architecture
+* evaluation of project versions
+* limitations and improvement perspectives
 
-Conformément aux consignes, le rapport ne contient pas de listing complet de code et renvoie aux docstrings lorsque nécessaire.
+In accordance with the guidelines, the report does not include full code listings and refers to docstrings where necessary.
 
 ---
 
-## 11. Auteurs
+## 11. Authors
 
-Projet réalisé par un **groupe de 3 étudiants**,
-dans le cadre d’un cours de **programmation Python / génie logiciel**.
+Project developed by a **group of 3 students**,
+as part of a **Python programming / software engineering** course.
 
 ---
 
 ## 12. Conclusion
 
-Ce projet illustre une démarche complète de développement logiciel :
+This project illustrates a complete software development workflow:
 
-* analyse du problème,
-* conception modulaire,
-* implémentation incrémentale,
-* documentation et réflexion critique.
+* problem analysis,
+* modular design,
+* incremental implementation,
+* documentation and critical reflection.
 
-Il met en évidence l’importance de la structure, de la lisibilité et de l’évolutivité dans un projet Python de taille intermédiaire.
+It highlights the importance of structure, readability, and scalability in a medium-sized Python project.
+
